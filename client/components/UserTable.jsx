@@ -57,7 +57,7 @@ export default class UserTable extends React.Component {
       })
       return obj;
     }
-    return fetch(`/v1/users?q[active]=1&q[house_id]=${this.props.id}`).then(response => {
+    return fetch(`https://api.hackerhouse.paris/v1/users?q[active]=1&q[house_id]=${this.props.id}`).then(response => {
       return response.json();
     }).then(json => {
       return camelizeObject(json);
