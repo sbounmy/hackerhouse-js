@@ -9520,15 +9520,19 @@ var UserCol = function (_React$Component) {
               'p',
               null,
               _react2.default.createElement(
-                'strong',
-                null,
-                this.props.user.firstname
+                'a',
+                { href: this.props.user.bioUrl },
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  this.props.user.firstname
+                )
               ),
               _react2.default.createElement('br', null),
               _react2.default.createElement(
                 'small',
                 null,
-                this.props.user.title
+                this.props.user.bioTitle
               )
             )
           )

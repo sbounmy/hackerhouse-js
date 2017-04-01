@@ -12,7 +12,8 @@ class UserCol extends React.Component {
         <div className="center">
           <img className="avatar xs" src={this.props.user.avatarUrl} />
           <p>
-            <strong>{this.props.user.firstname}</strong><br /><small>{this.props.user.title}</small>
+            <a href={this.props.user.bioUrl}><strong>{this.props.user.firstname}</strong></a><br />
+            <small>{this.props.user.bioTitle}</small>
           </p>
         </div>
       </div>
