@@ -12,15 +12,31 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
   entry: './client/index.js',
+
   output: {
     path: path.resolve('dist'),
-    filename: 'index_bundle.js'
+    filename: 'widget.js',
+    library: ['MyLib'],
+    libraryTarget: 'umd',
+    publicPath: '/dist/'
   },
+  // output: {
+  //   path: path.resolve('dist'),
+  //   filename: 'index_bundle.js'
+  // },
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig],
+  devServer: {
+    proxy: {
+      '/v1': {
+        target: 'http://localhost:3000',
+        secure: false
+      }
+    }
+  }
 }

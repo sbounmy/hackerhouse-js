@@ -15,4 +15,4 @@ var USERS = [
   {firstname: 'Emmanuel',      lastname: 'Solom',     login: 'muesli', title: 'IBM Engineer', avatarUrl: 'http://hackerhouse.paris/s/emmanuel.jpg' }
 ];
 
-ReactDOM.render(<UserTable users={USERS} />, document.getElementById('root'));
+ReactDOM.render(<UserTable />, document.getElementById('root'));
