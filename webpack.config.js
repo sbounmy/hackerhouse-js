@@ -14,7 +14,7 @@ module.exports = {
   entry: './client/index.js',
 
   output: {
-    path: path.resolve('dist'),
+    path: path.join(__dirname, 'dist'),
     filename: 'widget.js',
     library: ['MyLib'],
     libraryTarget: 'umd',
