@@ -14,7 +14,7 @@ module.exports = {
   entry: './client/index.js',
 
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'dist'),
     filename: 'widget.js',
     library: ['MyLib'],
     libraryTarget: 'umd',
@@ -34,7 +34,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/v1': {
-        target: 'http://localhost:3000',
+        target: "http://api.hackerhouse.paris",
         secure: false
       }
     }

@@ -2,6 +2,7 @@
     ./client/components/UserTable.jsx
 */
 import React from 'react';
+import ReactDOM from 'react-dom';
 import 'whatwg-fetch'
 
 class UserCol extends React.Component {
@@ -56,8 +57,7 @@ export default class UserTable extends React.Component {
       })
       return obj;
     }
-
-    return fetch('/v1/users?q[active]=1').then(response => {
+    return fetch(`/v1/users?q[active]=1&q[house_id]=${this.props.id}`).then(response => {
       return response.json();
     }).then(json => {
       return camelizeObject(json);
@@ -75,4 +75,11 @@ export default class UserTable extends React.Component {
       </div>
     );
   }
+}
+
+var elem = document.getElementById('avatars');
+var hh = elem.getAttribute('data-id');
+
+if (hh != undefined) {
+  ReactDOM.render(<UserTable id={hh} />, elem);
 }
