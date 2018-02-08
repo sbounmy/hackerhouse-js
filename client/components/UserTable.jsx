@@ -7,7 +7,7 @@ import 'whatwg-fetch'
 
 class UserCol extends React.Component {
   render() {
-    return (<div className="col sqs-col-2 span-2">
+    return (<div className="col sqs-col-1 span-1">
       <div className="sqs-block-content">
         <div className="center">
           <img className="avatar xs" src={this.props.user.avatarUrl} />
