@@ -9748,7 +9748,7 @@ var UserTable = function (_React$Component2) {
         });
         return obj;
       };
-      return fetch('https://api.hackerhouse.paris/v1/users?q[active]=1&q[house_id]=' + this.props.id).then(function (response) {
+      return fetch('https://api.hackerhouse.paris/v1/users?q[active]=true&q[house_id]=' + this.props.id).then(function (response) {
         return response.json();
       }).then(function (json) {
         return camelizeObject(json);
